@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "header": {
+    "description": "Ice Hockey Addon by Nogard\nTwitter: @Nogard_YT\nYouTube: Nogard",
+    "name": "Ice Hockey RP",
+    "uuid": "db759633-2666-4f7b-9ee7-cfbf1836ffb0",
+    "version": [0, 0, 1]
+  },
+  "modules": [
+    {
+      "description": "Ice Hockey Addon by Nogard\nTwitter: @Nogard_YT\nYouTube: Nogard",
+      "type": "resources",
+      "uuid": "aaea34d8-d44e-4413-9aef-326e2f6a29f1",
+      "version": [0, 0, 1]
+    }
+  ]
+}

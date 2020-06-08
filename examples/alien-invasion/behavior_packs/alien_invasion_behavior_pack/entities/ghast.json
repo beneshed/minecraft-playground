@@ -1,0 +1,57 @@
+{
+  "minecraft:entity": {
+    "format_version": 0.1,
+
+    "components": {
+    
+      "minecraft:identifier": {
+        "id": "minecraft:ghast"
+      },
+	  "minecraft:scale":
+	  {
+		"value": 0.3
+	  },
+	  "minecraft:nameable": {
+	  },
+      "minecraft:health": {
+        "value": 10,
+        "max": 10
+      },
+      "minecraft:collision_box": {
+        "width": 30,
+        "height": 10
+      },
+     "minecraft:loot_table": {
+      "id": "minecraft:entities.ghast"
+     },
+      "minecraft:shooter": {
+        "type": "largefireball",
+        "def": "minecraft:fireball.large"
+      },
+      "minecraft:type_family": {
+        "family":["ghast", "monster"]          
+      },
+     "minecraft:fall_damage": {
+       "value": 0.0
+      },
+      "minecraft:behavior.ranged_attack": {
+        "attack_radius": 64,
+        "charge_shoot_trigger": 2,
+        "charge_charged_trigger": 1
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+          "priority": 2,
+          "entity_types": [
+            {
+              "filters": { "other_with_families": [ "player", "skeleton"] },
+              "max_dist": 64
+            }
+          ],
+              "must_see": true
+      }
+    }
+  }
+}

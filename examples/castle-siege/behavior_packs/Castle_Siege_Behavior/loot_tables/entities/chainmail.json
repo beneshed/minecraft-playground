@@ -1,0 +1,21 @@
+{
+  "pools": [
+    {
+      "conditions": [
+        {
+          "condition": "random_chance",
+          "chance": 1.0
+        }
+      ],
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:chainmail_chestplate",
+          "weight": 3706,
+
+        }
+      ]
+    }
+  ]
+}

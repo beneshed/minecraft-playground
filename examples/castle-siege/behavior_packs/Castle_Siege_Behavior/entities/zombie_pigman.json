@@ -1,0 +1,244 @@
+{
+  "minecraft:entity": {
+    "format_version": 0.1,
+
+    "component_groups": {
+			"size2": {
+				"minecraft:scale": {
+					"value": 1.5,
+					"max": 1.5
+				},
+				"minecraft:timer": {
+					"time": [1, 2],
+					"looping": true,
+					"time_down_event": {
+						"event": "grow2"
+					}
+				},
+				"minecraft:environment_sensor": { }
+			},
+			"size3": {
+				"minecraft:scale": {
+					"value": 2.0,
+					"max": 2.0
+				},
+				"minecraft:timer": {
+					"time": [1, 2],
+					"looping": true,
+					"time_down_event": {
+						"event": "grow3"
+					}
+				},
+				"minecraft:environment_sensor": { }
+			},
+			"size4": {
+				"minecraft:scale": {
+					"value": 2.5,
+					"max": 2.5
+				},
+				"minecraft:timer": {
+					"time": [1, 2],
+					"looping": true,
+					"time_down_event": {
+						"event": "grow4"
+					}
+				},
+				"minecraft:environment_sensor": { }
+			},
+			"size5": {
+				"minecraft:scale": {
+					"value": 3.0,
+					"max": 3.0
+				},
+				"minecraft:timer": {
+					"time": [1, 2],
+					"looping": true,
+					"time_down_event": {
+						"event": "grow5"
+					}
+				},
+				"minecraft:environment_sensor": { }
+			},
+			"size6": {
+				"minecraft:scale": {
+					"value": 3.5,
+					"max": 3.5
+				},
+				"minecraft:timer": {
+					"time": [1, 2],
+					"looping": true,
+					"time_down_event": {
+						"event": "grow6"
+					}
+				},
+				"minecraft:environment_sensor": { }
+			},
+			"size7": {
+				"minecraft:scale": {
+					"value": 4.0,
+					"max": 4.0
+				},
+				"minecraft:timer": {
+					"time": [1, 2],
+					"looping": true,
+					"time_down_event": {
+						"event": "grow7"
+					}
+				},
+				"minecraft:environment_sensor": { }
+			},
+			"size8": {
+				"minecraft:scale": {
+					"value": 4.5,
+					"max": 4.5
+				},
+				"minecraft:timer": {
+					"time": [1, 2],
+					"looping": true,
+					"time_down_event": {
+						"event": "grow8"
+					}
+				},
+				"minecraft:environment_sensor": { }
+			},
+			"size9": {
+				"minecraft:scale": {
+					"value": 5.0,
+					"max": 5.0
+				},
+				"minecraft:timer": {
+					"time": [1, 2],
+					"looping": true,
+					"time_down_event": {
+						"event": "grow9"
+					}
+				},
+				"minecraft:environment_sensor": { }
+			},
+			"size10": {
+				"minecraft:scale": {
+					"value": 5.5,
+					"max": 5.5
+				},
+				"minecraft:timer": {
+					"time": [1, 2],
+					"looping": true,
+					"time_down_event": {
+						"event": "grow10"
+					}
+				},
+				"minecraft:environment_sensor": { }
+			},
+			"size11": {
+				"minecraft:scale": {
+					"value": 6.0,
+					"max": 6.0
+				},
+				"minecraft:foot_size": {
+					"value": 3.0,
+					"max": 3.0
+				},
+	      "minecraft:collision_box": {
+					"width": 0.2,
+					"height": 0.6
+				},
+				"minecraft:timer": { },
+				"minecraft:environment_sensor": { }
+			}
+
+    },
+
+
+    "components": {
+      "minecraft:collision_box": {
+				"width": 0.6,
+				"height": 1.8
+			},
+			"minecraft:mob_params": {
+        "fire_immune": true,
+        "burns_in_daylight": false
+      },
+      "minecraft:identifier": {
+        "id": "minecraft:pig_zombie"
+      },
+      "minecraft:type_family": {
+        "family":["zombie_pigman", "undead", "monster", "bad"]          
+      },
+      "minecraft:health": {
+        "value": 100,
+				"max": 100
+      },
+      "minecraft:movement": {
+        "value": 0.15,
+        "max": 0.5
+      },
+      "minecraft:attack": {
+        "damage": 5
+      },
+      "minecraft:zombie.spawn_reinforcements": {
+        "value": 0
+      },
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:equipment": {
+        "table": "loot_tables/entities/chainmail.json"
+      },
+      "minecraft:behavior.melee_attack": {
+        "priority": 3,
+        "speed_multiplier": 1,
+        "track_target": false
+      },
+			"minecraft:follow_range": {
+				"value": 100,
+				"max": 100
+			},
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 5,
+        "within_radius":  100,
+				"reselect_targets": true,
+        "entity_types": [
+					{
+						"filters": {
+							"any_of": {
+								"all_of": {
+									"other_with_families": [ "player" ],
+									"other_with_armor": "golden_chestplate"
+								},
+								"other_with_families": [ "good" ]
+							}
+						},
+            "max_dist": 100
+					}
+        ],
+            "must_see": false,
+						"must_reach": true
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 9
+      },
+			"minecraft:environment_sensor": {
+				"on_environment": {
+					"filters": {
+						"with_environment_any": "brightness_greater:0.95"
+					},
+					"event": "grow1"
+				}
+			}
+    },
+
+
+    "events": {
+			"grow1": { "add": { "component_groups": [ "size2" ] } },
+			"grow2": { "add": { "component_groups": [ "size3" ] } },
+			"grow3": { "add": { "component_groups": [ "size4" ] } },
+			"grow4": { "add": { "component_groups": [ "size5" ] } },
+			"grow5": { "add": { "component_groups": [ "size6" ] } },
+			"grow6": { "add": { "component_groups": [ "size7" ] } },
+			"grow7": { "add": { "component_groups": [ "size8" ] } },
+			"grow8": { "add": { "component_groups": [ "size9" ] } },
+			"grow9": { "add": { "component_groups": [ "size10" ] } },
+			"grow10": { "add": { "component_groups": [ "size11" ] } }
+    }
+  }
+}

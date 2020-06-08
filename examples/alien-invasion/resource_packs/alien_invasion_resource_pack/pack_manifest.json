@@ -1,0 +1,16 @@
+{
+  "header": {
+    "pack_id": "5abdb963-4f3f-4d97-8482-88e2049ab149",
+    "name": "Alien Invasion Resource Pack",
+    "packs_version": "0.0.1",
+    "description": "Alien Invasion demonstration resources.  Designed for use with Alien Invasion behaviors.",
+    "modules": [
+      {
+        "description": "Alien Invasion Resource Pack",
+        "version": "0.0.1",
+        "uuid": "65b0adf6-ad5f-4e1b-80e8-e4e1965cbce8",
+        "type": "resources"
+      }
+    ]
+  }
+}

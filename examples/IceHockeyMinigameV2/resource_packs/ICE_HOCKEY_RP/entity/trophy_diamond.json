@@ -1,0 +1,20 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "nogard:trophy_diamond",
+      "materials": { "default": "puck" },
+      "textures": {
+        "default": "textures/entity/trophy_diamond"
+      },
+      "geometry": {
+        "default": "geometry.trophy"
+      },
+      "render_controllers": [ "controller.render.babycup" ],
+      "spawn_egg": {
+        "texture": "trophy_diamond",
+		"texture_index": 0
+      }
+    }
+  }
+}

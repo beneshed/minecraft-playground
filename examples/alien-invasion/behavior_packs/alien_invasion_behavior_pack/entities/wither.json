@@ -1,0 +1,77 @@
+{
+  "minecraft:entity": {
+    "format_version": 0.1,
+
+    "components": {
+      "minecraft:identifier": {
+        "id": "minecraft:skeleton.wither"
+      },
+      "minecraft:health": {
+        "value": 20,
+        "max": 20
+      },
+      "minecraft:collision_box": {
+        "width": 0.72,
+        "height": 2.535
+      },
+	  "minecraft:type_family": {
+        "family": [ "skeleton" ]
+      },
+      "minecraft:attack": {
+				"damage": 4
+			},
+      "minecraft:loot_table": {
+        "id": "minecraft:loot.tables.entities.wither.skeleton"
+      },
+      "minecraft:equipment": {
+        "table": "loot.tables.entities.wither.skeleton.gear"
+      },
+      "minecraft:movement": {
+        "value": 0.25,
+        "max": 0.25
+      },
+	  "minecraft:fall_damage":{
+		"value":0
+	  },
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "entity_types": [
+          {
+            "filters": { "other_with_families": [ "irongolem", "zombie_husk"] },
+            "max_dist": 16
+          }
+        ],
+            "must_see": true
+      },
+      "minecraft:behavior.melee_attack": {
+        "priority": 4,
+        "target_dist": 1.2,
+        "speed_multiplier": 1.25,
+        "track_target": true
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 5,
+        "speed_multiplier": 1
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 6,
+        "look_distance": 8
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 6
+      }
+    },
+
+    "events": {
+      "minecraft:entity_spawned": {
+
+      }
+    }
+  }
+}

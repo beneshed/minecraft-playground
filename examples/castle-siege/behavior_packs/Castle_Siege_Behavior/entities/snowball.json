@@ -1,0 +1,34 @@
+{
+  "minecraft:entity": {
+    "format_version": 0.1,
+
+    "components": {
+      "minecraft:identifier": {
+        "id": "minecraft:snowball"
+      },
+      "minecraft:collision_box": {
+        "width": 0.25,
+        "height": 0.25
+      },
+      "minecraft:projectile": {
+        "particle": "snowballpoof",
+        "onHit": {
+					"spawn_chance": {
+						"firstSpawnChance": 1,
+						"secondSpawnChance": 4,
+						"firstSpawnCount": 2,
+						"secondSpawnCount": 3,
+						"spawnMob": "spider",
+						"spawnDefinition": "minecraft:spider",
+						"spawnBaby": false
+					},
+          "remove_on_hit": { }
+        },
+        "power": 1.5,
+        "gravity": 0.03,
+        "angleoffset": 0.0,
+				"damage": 1.0
+      }
+    }
+  }
+}

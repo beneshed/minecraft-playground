@@ -1,0 +1,111 @@
+{
+  "minecraft:entity": {
+    "format_version": 0.1,
+
+    "component_groups": {
+      "minecraft:zombie_adult": {
+        "minecraft:movement": {
+          "value": 0.33,
+          "max": 0.33
+        },
+        "minecraft:loot": {
+          "table": "loot.tables.entities.zombie"
+        }
+      }
+    },
+
+    "components": {
+      "minecraft:identifier": {
+        "id": "minecraft:zombie"
+      },
+      "minecraft:nameable": {
+      },
+	  
+      "minecraft:type_family": {
+        "family": [ "zombie", "undead", "monster" ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.6,
+        "height": 1.8
+      },
+      "minecraft:equipment": {
+        "table": "loot.tables.entities.zombie.equipment"
+      },
+
+      "minecraft:health": {
+        "value": 20,
+        "max": 20
+      },
+      "minecraft:attack": {
+        "damage": 3
+      },
+	  "minecraft:fall_damage":{
+		"value":0
+	  },
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:behavior.break_door": {
+        "priority": 1
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 3
+      },
+      "minecraft:behavior.melee_attack": {
+        "priority": 3,
+        "speed_multiplier": 1,
+        "track_target": false
+      },
+      "minecraft:behavior.move_towards_restriction": {
+        "priority": 4,
+        "speed_multiplier": 1
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 5,
+        "within_radius":  25,
+        "entity_types": [
+          {
+            "filters": {"other_with_families": [ "player", "skeleton", "villager" ]},
+            "max_dist": 35
+          }
+        ],
+            "must_see": false
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 6,
+        "speed_multiplier": 1
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 7,
+        "look_distance": 6,
+        "probability": 0.02
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 7
+      },
+      "minecraft:rideable": {
+        "seat_count": 1,
+        "family_types": [
+          "zombie"
+        ]
+      }
+    },
+
+    "events": {
+      "minecraft:entity_spawned": {
+        "randomize": [
+          {
+            "weight": 9500,
+            "remove": {
+            },
+            "add": {
+              "component_groups": [
+                "minecraft:zombie_adult"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "resource_pack_name": "vanilla",
+  "texture_name": "atlas.items",
+  "texture_data": {
+    "puck": {
+      "textures": "textures/items/puck"
+    },
+    "trophy_diamond": {
+      "textures": "textures/items/trophy_diamond"
+    },
+    "trophy_gold": {
+      "textures": "textures/items/trophy_gold"
+    },
+    "trophy_silver": {
+      "textures": "textures/items/trophy_silver"
+    },
+    "trophy_bronze": {
+      "textures": "textures/items/trophy_bronze"
+    }
+  }
+}

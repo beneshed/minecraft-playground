@@ -1,0 +1,35 @@
+{
+ "minecraft:entity": {
+  "format_version": 0.1,
+  "components": {
+   "minecraft:identifier": {
+    "id": "minecraft:fireball.large"
+   },
+   "minecraft:collision_box": {
+    "width": 0.31,
+    "height": 0.31
+   },
+   "minecraft:projectile": {
+    
+    "onHit": {
+		"impact_damage": {
+		"damage": 1,
+		"knockback": false,
+		"catchFire": false,
+		"semirandomdiffdamage": false
+     },
+	 "remove_on_hit": { 
+		}
+	},
+    "power": 1.6,
+    "gravity": 0.00,
+    "uncertaintyBase": 8,
+    "uncertaintyMultiplier": 1,
+    "anchor": 1,
+    "offset": [ 0, -0.1, 0 ],
+    "reflectOnHurt": true,
+	"semirandomdiffdamage": false
+   }
+  }
+ }
+}

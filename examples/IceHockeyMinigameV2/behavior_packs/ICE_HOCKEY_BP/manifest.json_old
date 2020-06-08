@@ -1,0 +1,16 @@
+{
+  "header": {
+    "pack_id": "667791ec-0ece-4701-982a-3a948be73501",
+    "name": "Ice Hockey BP",
+    "packs_version": "0.0.1",
+    "description": "Ice Hockey Addon by Nogard\nTwitter: @Nogard_YT\nYouTube: Nogard",
+    "modules": [
+      {
+        "description": "Ice Hockey Addon by Nogard\nTwitter: @Nogard_YT\nYouTube: Nogard",
+        "version": "0.0.1",
+        "uuid": "667791ec-0ece-4701-982a-3a948be73501",
+        "type": "data"
+      }
+    ]
+  }
+}

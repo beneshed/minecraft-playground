@@ -1,0 +1,16 @@
+{
+  "header": {
+    "pack_id": "12d03f6c-a6ea-4ddc-932a-4b1a0af59fc5",
+    "name": "Castle Siege",
+    "packs_version": "0.1",
+    "description": "Castle Siege Behavior pack",
+		"modules": [
+			{
+				"description": "Castle Siege Addon",
+				"version": "0.0.1",
+				"uuid": "12d03f6c-a6ea-4ddc-932a-4b1a0af59fc6",
+				"type": "data"
+			}
+		]
+  }
+}

@@ -1,0 +1,19 @@
+{
+   "format_version" : 1,
+   "header" : {
+      "description" : "Ice Hockey Addon by Nogard\nTwitter: @Nogard_YT\nYouTube: Nogard",
+      "name" : "Ice Hockey BP",
+      "platform_locked" : false,
+      "uuid" : "50e3cdbd-b41f-49af-8bb4-c3d278e8c315",
+      "version" : [ 0, 0, 1 ]
+   },
+   "min_engine_version" : [ 0, 0, 1, 1, 2, 5 ],
+   "modules" : [
+      {
+         "description" : "Ice Hockey Addon by Nogard\nTwitter: @Nogard_YT\nYouTube: Nogard",
+         "type" : "data",
+         "uuid" : "667791ec-0ece-4701-982a-3a948be73501",
+         "version" : [ 0, 0, 1 ]
+      }
+   ]
+}

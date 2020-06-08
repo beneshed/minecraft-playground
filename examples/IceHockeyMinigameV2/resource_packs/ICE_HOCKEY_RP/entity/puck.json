@@ -1,0 +1,20 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "nogard:puck",
+      "materials": { "default": "puck" },
+      "textures": {
+        "default": "textures/entity/puck"
+      },
+      "geometry": {
+        "default": "geometry.puck"
+      },
+      "render_controllers": [ "controller.render.babycup" ],
+      "spawn_egg": {
+        "texture": "puck",
+		"texture_index": 0
+      }
+    }
+  }
+}

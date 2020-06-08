@@ -1,0 +1,96 @@
+{
+  "minecraft:entity": {
+    "format_version": 0.1,
+		
+    "component_groups": {
+			"exploding": {
+				"minecraft:explode": {
+					"fuseLength": 0,
+					"fuseLit": true,
+					"power": 0.1,
+					"causesFire": false
+				}
+			}
+    },
+
+    "components": {
+    
+      "minecraft:identifier": {
+        "id": "minecraft:ghast"
+      },
+			"minecraft:type_family": {
+        "family": [ "bad" ]
+      },
+			"minecraft:scale": {
+				"value": 0.15
+			},
+      "minecraft:health": {
+        "value": 4,
+        "max": 4
+      },
+      "minecraft:collision_box": {
+        "width": 4,
+        "height": 4
+      },
+      "minecraft:shooter": {
+        "type": "largefireball",
+        "def": "minecraft:fireball.large"
+      },
+      "minecraft:type_family": {
+        "family":["ghast", "monster"]          
+      },
+     "minecraft:fall_damage": {
+       "value": 0.0
+      },
+      "minecraft:behavior.ranged_attack": {
+        "attack_radius": 64,
+        "charge_shoot_trigger": 2,
+        "charge_charged_trigger": 1
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1
+      },
+			"minecraft:follow_range": {
+				"value": 100,
+				"max": 100
+			},
+			"minecraft:timer": {
+				"time": [12, 15],
+				"looping": false,
+				"time_down_event": {
+					"event": "explode",
+					"target": "self"
+				}
+			},
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 5,
+        "within_radius":  100,
+				"reselect_targets": true,
+        "entity_types": [
+					{
+						"filters": {
+							"any_of": {
+								"all_of": {
+									"other_with_families": [ "player" ],
+									"other_with_armor": "golden_chestplate"
+								},
+								"other_with_families": [ "good" ]
+							}
+						},
+            "max_dist": 100
+					}
+        ],
+            "must_see": false,
+						"must_reach": true
+      }
+    },
+		
+		"events": {
+			"explode": {
+				"add": {
+					"component_groups": [ "exploding" ]
+				}
+			}
+    }
+  }
+}
