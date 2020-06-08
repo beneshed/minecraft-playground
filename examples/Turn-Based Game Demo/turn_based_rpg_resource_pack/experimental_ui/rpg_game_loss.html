@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<script src="UIEngine.js"></script>
+	<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+	<div class="screenBox redTint">
+		<div class="GameMessage">
+			<p>You lost!</p>
+			<button id="_restart_">Restart</button>
+			<button id="_leave_">Leave</button>
+		</div>
+	</div>
+</body>
+
+<script type="text/javascript">
+	// Get a handle to the scripting interface on creation.
+	// The script interface can trigger events to the client script
+	let scriptEngineHandle = null;
+	engine.on("facet:updated:core.scripting", function (scriptEngine) {
+		scriptEngineHandle = scriptEngine;
+	});
+
+	engine.trigger("facet:request", ["core.scripting"]);
+
+	// Grab the restart button element
+	let restartButton = document.getElementById("_restart_");
+	// When the restart button is pressed send a message to the client script
+	restartButton.addEventListener("click", function () {
+		scriptEngineHandle.triggerEvent("restartPressed");
+	});
+
+	// Grab the leave button element
+	let leaveButton = document.getElementById("_leave_");
+	// When the leave button is pressed send a message to the client script
+	leaveButton.addEventListener("click", function () {
+		scriptEngineHandle.triggerEvent("leavePressed");
+	});
+</script>
+</html>

@@ -1,0 +1,42 @@
+Info: Initializing COHTML ver. 1.14.0.5
+Info: Coherent Renoir library initialized!
+Info: COHTML library initialized!
+Info: Inspector module loaded!
+Info: Inspector enabled: true
+Warning: Unable to load font face from file: fonts/Minecraft Symbol.otf
+Warning: Unable to load font face from file: fonts/Mojangles.ttf
+Info: Initialized application!
+Warning: ResourceRequestJob | Failed loading resource: coui://uiresources/Hello/Hello.html
+Info: Initialized Render Thread!
+Warning: Unable to parse shorthand declaration: border - 4px outset #8b8b8b
+Warning: Unable to parse shorthand declaration: border - 4px outset #8b8b8b
+Warning: Unable to parse shorthand declaration: border - 4px outset #8b8b8b
+Info: Uninitializing Renoir library!
+Info: Uninitializing COHTML library!
+Info: Allocations by type
+Info: Unknown Total Allocations: 0
+Info: Untagged Total Allocations: 0
+Info: System Total Allocations: 0
+Info: Logging Total Allocations: 0
+Info: Loader Total Allocations: 0
+Info: DOM Total Allocations: 0
+Info: DOMStatic Total Allocations: 0
+Info: Layout Total Allocations: 0
+Info: CSS Total Allocations: 0
+Info: CSSStatic Total Allocations: 0
+Info: TaskSystemMemory Total Allocations: 0
+Info: Display Total Allocations: 0
+Info: Profiling Total Allocations: 0
+Info: HTMLParser Total Allocations: 0
+Info: TempAllocator Total Allocations: 0
+Info: PoolAllocator Total Allocations: 0
+Info: Dump Total Allocations: 0
+Info: Script Total Allocations: 0
+Info: XML Total Allocations: 0
+Info: SVG Total Allocations: 0
+Info: Server Total Allocations: 0
+Info: Inspector Total Allocations: 0
+Info: UnityPlugin Total Allocations: 0
+Info: UriParser Total Allocations: 0
+Info: Media Total Allocations: 0
+Info: Total allocations: 0

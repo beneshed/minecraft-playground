@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<script src="UIEngine.js"></script>
+	<link rel="stylesheet" href="styles.css" />
+</head>
+<body id="_body_">
+	<div class="screenBox">
+		<div class="ability_panel">
+			<p>Abilities</p>
+			<div class="ability_button_group">
+				<!-- Display all of the ability types -->
+				<button id="_ability1_" class="ability_button" style="background-image:url('attack_button.png')"></button>
+				<button id="_ability2_" class="ability_button" style="background-image:url('group_attack.png')"></button>
+				<button id="_ability3_" class="ability_button" style="background-image:url('regeneration.png')"></button>
+			</div>
+		</div>
+		<div class="turn_order_group">
+			<!-- Display the turn order of the fighters. The server script will send the updated status and order to the client script which will relay that information here -->
+			<p>Turn Order</p>
+			<div id="turn_order_slot_0" class="turn_order_frame" style="background-image:url('Blaze_Face.png')"></div>
+			<div id="turn_order_slot_1" class="turn_order_frame" style="background-image:url('Evoker_Head.png')"></div>
+			<div id="turn_order_slot_2" class="turn_order_frame" style="background-image:url('SkeletonFace.png')"></div>
+			<div id="turn_order_slot_3" class="turn_order_frame" style="background-image:url('Vindicator_Head.png')"></div>
+			<div id="turn_order_slot_4" class="turn_order_frame" style="background-image:url('OcelotFace.png')"></div>
+			<div id="turn_order_slot_5" class="turn_order_frame" style="background-image:url('Llama_Head.png')"></div>
+		</div>
+	</div>
+</body>
+
+<script type="text/javascript">
+	let TurnOrderState = Object.freeze({ inactive: 0, active: 1, fainted: 2 });
+
+	// Get a handle to the scripting interface on creation.
+	// The script interface can trigger events to the client script
+	let scriptInterface = null;
+	engine.on("facet:updated:core.scripting", function (interface) {
+		scriptInterface = interface;
+	});
+
+	engine.trigger("facet:request", ["core.scripting"]);
+
+	// Get each of the ability buttons
+	let ability1Button = document.getElementById("_ability1_");
+	let ability2Button = document.getElementById("_ability2_");
+	let ability3Button = document.getElementById("_ability3_");
+
+	let bodyElement = document.getElementById("_body_");
+	bodyElement.addEventListener("click", function () {
+		scriptInterface.triggerEvent("rpg_game:click");
+	})
+
+	// Callback to send the button event to the client script
+	let buttonCallback = function (event) {
+		scriptInterface.triggerEvent(event);
+	}
+
+	// Handle button presses on the ability buttons. Send a specific event for each ability button to the client script.
+	ability1Button.addEventListener("click", function () {
+		buttonCallback("damageSingleTargetAbilityClicked")
+	});
+	ability2Button.addEventListener("click", function () {
+		buttonCallback("damageWholeTeamAbilityClicked")
+	});
+	ability3Button.addEventListener("click", function () {
+		buttonCallback("healSingleTargetAbilityClicked")
+	});
+
+	// Handle the UpdateTurnOrder event from the client script
+	engine.on("UpdateTurnOrder", function (turnOrderData) {
+		// turnOrderData is the stringified event data from the client script. Parse it back into a JSON object.
+		let parsedData = JSON.parse(turnOrderData);
+		let order = parsedData.order;
+		let turnState = parsedData.turn_order_state;
+		let imageName = parsedData.image_name;
+
+		// Get the turn order slot element
+		let turnOrderElement = document.getElementById("turn_order_slot_" + order);
+		if (imageName) {
+			// Set the slots image to the fighters turn order image
+			turnOrderElement.style.backgroundImage = "url(" + imageName + ")";
+		}
+
+		// Fighter is not currently active
+		if (turnState === TurnOrderState.inactive) {
+			turnOrderElement.className = "turn_order_frame";
+		}
+		// Fighter is currently active
+		else if (turnState === TurnOrderState.active) {
+			turnOrderElement.className = "turn_order_frame active";
+		}
+		// Fighter has fainted
+		else if (turnState === TurnOrderState.fainted) {
+			turnOrderElement.className = "turn_order_frame dead";
+		}
+	});
+
+</script>
+</html>

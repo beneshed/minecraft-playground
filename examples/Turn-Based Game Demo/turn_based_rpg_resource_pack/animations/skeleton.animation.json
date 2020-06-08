@@ -1,0 +1,16 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.skeleton.attack": {
+      "loop": true,
+      "bones": {
+        "leftArm": { 
+          "rotation": [ "Math.Sin(variable.script_attacktime*180)*-180", 0.0, 0.0 ] 
+        },
+		    "rightArm": { 
+          "rotation": [ "Math.Sin(variable.script_attacktime*180)*-180", 0.0, 0.0 ]
+        }
+      }
+    }
+  }
+}

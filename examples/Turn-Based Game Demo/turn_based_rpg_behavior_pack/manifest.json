@@ -1,0 +1,30 @@
+{
+    "format_version": 1,
+    "header": {
+        "description": "Turn-Based Game Behavior Pack",
+        "name": "Turn-Based Game Behavior Pack",
+        "uuid": "f828f98c-b82e-475d-bdf0-b614dada262a",
+        "version": [0, 0, 7],
+        "min_engine_version" : [ 1, 12, 0 ]
+    },
+    "modules": [
+        {
+            "description": "Turn-Based Game Behavior Pack module",
+            "type": "data",
+            "uuid": "7d7ba6ed-c26d-4ede-8876-bec476092444",
+            "version": [0, 0, 2]
+        },
+        {
+            "description": "Turn-Based Game Behavior Pack client scripts",
+            "type": "client_data",
+            "uuid": "5906ffb5-7204-4e58-9640-ec53f886b76f",
+            "version": [0, 0, 2]
+        }
+    ],
+    "dependencies": [
+        {
+            "uuid": "ca02f42a-356d-4d26-92b5-b7f3589e26ee",
+            "version": [0, 0, 7]
+        }
+    ]
+}
